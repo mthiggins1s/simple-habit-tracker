@@ -1,0 +1,76 @@
+/* Styles for the webpage */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #090a11;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    background-color: #1a1c28;
+    padding: 20px;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+}
+h1 {
+    color: white;
+}
+
+.habit-container {
+    margin: 20px 0;
+}
+
+.habit {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.habit label {
+    font-size: 18px;
+    font-weight: bold;
+    color:  white;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.checkbox-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.checkbox-container input {
+    margin-right: 8px;
+    margin-bottom: 12px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #003cff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #6e8ef8;
+}
+
+.summary {
+    margin-top: 30px;
+    font-size: 18px;
+    color:  white;
+}
