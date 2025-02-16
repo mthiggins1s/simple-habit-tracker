@@ -1,5 +1,6 @@
 // Tick Checkboxes for Completion
 
+
 document.getElementById('mark-complete').addEventListener('click', function() {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     let completedCount = 0;
