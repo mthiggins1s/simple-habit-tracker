@@ -38,3 +38,5 @@ document.getElementById('add-habit-btn').addEventListener('click', function() {
     document.getElementById('habit-container').appendChild(newHabitDiv);
     document.getElementById('habit-name-input').value = '';
   });
+
+  // Delete Habit
