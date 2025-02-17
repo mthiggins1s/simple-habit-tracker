@@ -23,6 +23,7 @@ body {
 }
 h1 {
     color: white;
+    text-shadow: #FC0 1px 0 10px;
 }
 
 #habit-container {
@@ -43,6 +44,13 @@ h1 {
     margin-bottom: 8px;
 }
 
+::placeholder {
+    font-size: 16px;
+    color: #888;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
 .checkbox-container {
     display: flex;
     flex-wrap: wrap;
@@ -58,8 +66,9 @@ h1 {
 button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #003cff;
-    color: white;
+    background-color:  rgb(255, 208, 0);
+    color: rgb(61, 61, 61);
+    font-weight: bold;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -67,19 +76,20 @@ button {
 }
 
 button:hover {
-    background-color: #6e8ef8;
+    background-color: rgb(252, 230, 132);
 }
 
 .summary {
     margin-top: 30px;
     font-size: 18px;
     color:  white;
+    text-shadow: #FC0 1px 0 10px;
 }
 
 .button-container {
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 10px;
+    margin-top: 20px;
   }
 
 #mark-complete {
