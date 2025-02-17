@@ -6,84 +6,24 @@
     <title>Simple Habit Tracker</title>
     <link rel="stylesheet" href="./styles/styles.css" />
     <link rel="stylesheet" href="./styles/border-animation.css" />
+    <script src="./scripts/script.js" defer></script>
   </head>
   <body>
     <div class="container">
       <h1>Simple Habit Tracker</h1>
-      <div class="habit-container">
-        <div class="habit">
-          <label>Drink Water</label>
-          <div class="checkbox-container">
-            <input type="checkbox" id="drink-water-monday" />
-            <input type="checkbox" id="drink-water-tuesday" />
-            <input type="checkbox" id="drink-water-wednesday" />
-            <input type="checkbox" id="drink-water-thursday" />
-            <input type="checkbox" id="drink-water-friday" />
-            <input type="checkbox" id="drink-water-saturday" />
-            <input type="checkbox" id="drink-water-sunday" />
-          </div>
-        </div>
-
-        <div class="habit">
-          <label>Exercise</label>
-          <div class="checkbox-container">
-            <input type="checkbox" id="exercise-monday" />
-            <input type="checkbox" id="exercise-tuesday" />
-            <input type="checkbox" id="exercise-wednesday" />
-            <input type="checkbox" id="exercise-thursday" />
-            <input type="checkbox" id="exercise-friday" />
-            <input type="checkbox" id="exercise-saturday" />
-            <input type="checkbox" id="exercise-sunday" />
-          </div>
-        </div>
-
-        <div class="habit">
-          <label>Eat a Healthy Meal</label>
-          <div class="checkbox-container">
-            <input type="checkbox" id="meal-monday" />
-            <input type="checkbox" id="meal-tuesday" />
-            <input type="checkbox" id="meal-wednesday" />
-            <input type="checkbox" id="meal-thursday" />
-            <input type="checkbox" id="meal-friday" />
-            <input type="checkbox" id="meal-saturday" />
-            <input type="checkbox" id="meal-sunday" />
-          </div>
-        </div>
-
-        <div class="habit">
-          <label>Meditate</label>
-          <div class="checkbox-container">
-            <input type="checkbox" id="meditate-monday" />
-            <input type="checkbox" id="meditate-tuesday" />
-            <input type="checkbox" id="meditate-wednesday" />
-            <input type="checkbox" id="meditate-thursday" />
-            <input type="checkbox" id="meditate-friday" />
-            <input type="checkbox" id="meditate-saturday" />
-            <input type="checkbox" id="meditate-sunday" />
-          </div>
-        </div>
-
-        <div class="habit">
-          <label>Learn Something New</label>
-          <div class="checkbox-container">
-            <input type="checkbox" id="learn-monday" />
-            <input type="checkbox" id="learn-tuesday" />
-            <input type="checkbox" id="learn-wednesday" />
-            <input type="checkbox" id="learn-thursday" />
-            <input type="checkbox" id="learn-friday" />
-            <input type="checkbox" id="learn-saturday" />
-            <input type="checkbox" id="learn-sunday" />
-          </div>
-        </div>
+      <div class="habit-container" id="habit-container">
       </div>
-
+      <div class="add-habit-section">
+        <input type="text" id="habit-name-input" placeholder="Enter a new habit" />
+      </div>
+      <div class="button-container">
+        <button id="add-habit-btn">Add</button>
+        <button>Delete</button>
+        <button>View</button>
+      </div>
       <button id="mark-complete">Mark Habits as Complete</button>
-
       <div class="summary">
         <h2>Summary</h2>
         <p>Total Habits Completed: <span id="total-completed">0</span></p>
       </div>
     </div>
-    <script src="./scripts/script.js"></script>
-  </body>
-</html>
