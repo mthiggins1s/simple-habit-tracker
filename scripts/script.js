@@ -48,4 +48,25 @@ document.getElementById('add-habit-btn').addEventListener('click', function() {
     // the input field for the habit name is cleared, resetting it for the next habit.
   });
 
+
+
   // Delete Habit
+
+  
+
+  document.getElementById('remove-habit-btn').addEventListener('click', function() {
+    // this line attaches an event listener to the button with the ID "remove-habit-btn". When the button is clicked, the following function is executed.
+    const habitContainer = document.getElementById('habit-container');
+    // stores a reference to the 'habit-container' element in a variable called 'habitContainer' so that we can work with it in the rest of the code.
+    const habits = habitContainer.querySelectorAll('.habit');
+    // it stores all .habit elements inside the 'habits' variable, so we can perform actions on these individual habit elements later.
+    if (habits.length === 0) {
+        alert("There are no habits to delete!");
+    } else {
+        // Get the most recent habit (last one in the container)
+        const lastHabit = habits[habits.length - 1];
+        
+        // Remove it from the container
+        habitContainer.removeChild(lastHabit);
+    }
+});
