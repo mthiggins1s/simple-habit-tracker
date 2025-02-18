@@ -20,6 +20,15 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 80%;
     max-width: 600px;
+
+.calendar-img {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    width: 40px;
+    height: auto;
+}
+
 }
 h1 {
     color: white;
