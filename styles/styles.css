@@ -23,7 +23,7 @@ body {
 }
 h1 {
     color: white;
-    text-shadow: #FC0 1px 0 10px;
+    text-shadow: rgb(255, 255, 255) 1px 0 10px;
 }
 
 #habit-container {
@@ -66,8 +66,8 @@ h1 {
 button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color:  rgb(255, 208, 0);
-    color: rgb(61, 61, 61);
+    background-color:  rgb(34, 0, 255);
+    color: rgb(255, 255, 255);
     font-weight: bold;
     border: none;
     border-radius: 5px;
@@ -76,14 +76,14 @@ button {
 }
 
 button:hover {
-    background-color: rgb(252, 230, 132);
+    background-color: rgb(132, 152, 252);
 }
 
 .summary {
     margin-top: 30px;
     font-size: 18px;
     color:  white;
-    text-shadow: #FC0 1px 0 10px;
+    text-shadow: rgb(255, 255, 255) 1px 0 10px;
 }
 
 .button-container {
