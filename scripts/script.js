@@ -28,7 +28,7 @@ document.getElementById('add-habit-btn').addEventListener('click', function() {
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.id = `${habitName.toLowerCase().replace(/\s+/g, '-')}-${day.toLowerCase()}`;
-        // turns my checkbox into a string (Ex. if I enter "morning walk" on Monday as my habit, and I check the box, itll change the id to "morning-walk-monday", and then return it as "Morning Walk").
+        // turns my checkbox into a string (Ex. if I enter "morning walk" on Monday as my habit, and I check the box, it'll change the id to "morning-walk-monday", and then return it as "Morning Walk").
         newHabitDiv.querySelector('.checkbox-container').appendChild(checkbox);
     });
 
