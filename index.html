@@ -6,12 +6,14 @@
     <title>Simple Habit Tracker</title>
     <link rel="stylesheet" href="./styles/styles.css" />
     <link rel="stylesheet" href="./styles/border-animation.css" />
-    <script src="./scripts/script.js" defer></script>
+    <script src="./scripts/script.js" defer></script></script>
   </head>
   <body>
     <div class="container">
       <h1>Simple Habit Tracker</h1>
-      <img src="./images/schedule.png" alt="Habit Tracker Calendar" class="calendar-img" style="width: 40px; height: auto;">
+      <button id="calendar-btn" class="image-btn">
+        <img src="./images/schedule.png" alt="Habit Tracker Calendar" class="calendar-img" style="width: 40px; height: auto;">
+      </button>
       <div class="habit-container" id="habit-container">
       </div>
       <div class="add-habit-section">
@@ -26,5 +28,4 @@
       <div class="summary">
         <h2>Summary</h2>
         <p>Total Habits Completed: <span id="total-completed">0</span></p>
-      </div>
     </div>
