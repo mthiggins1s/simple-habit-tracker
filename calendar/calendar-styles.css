@@ -56,3 +56,14 @@ body {
 .days .fade {
     color: #555;
 }
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color:  rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
