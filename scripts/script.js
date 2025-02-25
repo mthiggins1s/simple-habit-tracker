@@ -48,3 +48,10 @@ document.getElementById('add-habit-btn').addEventListener('click', function() {
         habitContainer.removeChild(lastHabit);
     }
 });
+
+// Update Habits (Habits to be SAVED in the event of REFRESH)
+
+localStorage.setItem('habits', habitName)
+const updateButton = localStorage.getItem('habits');
+
+console.log(updateButton);
