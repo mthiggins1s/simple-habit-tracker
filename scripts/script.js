@@ -1,113 +1,89 @@
-// Tick Checkboxes for Completion
-
-document.getElementById('mark-complete').addEventListener('click', function() {
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    let completedCount = 0;
-
-    checkboxes.forEach(function(checkbox) {
-        if (checkbox.checked) {
-            completedCount++;
-        }
-    });
-
-    document.getElementById('total-completed').textContent = completedCount;
-});
+import {  habitContainer,  habitNameInput,  totalCompleted,  daysOfWeek, habits,storedHabits,} from "./data.js";
 
 // Add Habit
-document.getElementById('add-habit-btn').addEventListener('click', function() {
-    const habitName = document.getElementById('habit-name-input').value.trim();
-    if (!habitName) return alert("Please enter a habit name!");
+function addHabit() {
+  const habitName = habitNameInput.value.trim();
 
-    const newHabitDiv = document.createElement('div');
-    newHabitDiv.classList.add('habit');
-    newHabitDiv.innerHTML = `<label>${habitName}</label><div class="checkbox-container"></div>`;
+  if (!habitName) return alert("Please enter a habit name!");
+  let newHabitDiv = createHabitDiv(habitName);
+  habitContainer.appendChild(newHabitDiv);
+  habitNameInput.value = "";
 
-    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    days.forEach(day => {
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.id = `${habitName.toLowerCase().replace(/\s+/g, '-')}-${day.toLowerCase()}`;
-        newHabitDiv.querySelector('.checkbox-container').appendChild(checkbox);
-    });
-
-    document.getElementById('habit-container').appendChild(newHabitDiv);
-    document.getElementById('habit-name-input').value = '';
-
-    saveHabits(); // Save after adding a habit
-});
+  saveHabits();
+}
+document.getElementById("add-habit-btn").addEventListener("click", addHabit);
 
 // Delete Habit
-document.getElementById('remove-habit-btn').addEventListener('click', function() {
-    const habitContainer = document.getElementById('habit-container');
-    const lastHabit = habitContainer.querySelector('.habit:last-child');
+document
+  .getElementById("remove-habit-btn")
+  .addEventListener("click", function () {
+    const lastHabit = habitContainer.querySelector(".habit:last-child");
 
     if (!lastHabit) {
-        alert("There are no habits to delete!");
+      alert("There are no habits to delete!");
     } else {
-        habitContainer.removeChild(lastHabit);
-        saveHabits(); // Save after deleting a habit
+      habitContainer.removeChild(lastHabit);
+      saveHabits();
     }
-});
-
-// Mark Habit Complete
-document.getElementById('mark-complete').addEventListener('click', function() {
+  });
+document.getElementById("mark-complete").addEventListener("click", function () {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     let completedCount = 0;
-
-    checkboxes.forEach(function(checkbox) {
+    checkboxes.forEach(function (checkbox) {
         if (checkbox.checked) completedCount++;
     });
+    totalCompleted.textContent = completedCount;
 
-    document.getElementById('total-completed').textContent = completedCount;
-
-    saveHabits(); // Save after marking habits complete
+    saveHabits();
 });
+function createHabitDiv(habitName) {
+  const newHabitDiv = document.createElement("div");
+  newHabitDiv.classList.add("habit");
+  newHabitDiv.innerHTML = `<label>${habitName}</label><div class="checkbox-container"></div>`;
+
+  daysOfWeek.forEach((day) => {
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.id = `${habitName
+      .toLowerCase()
+      .replace(/\s+/g, "-")}-${day.toLowerCase()}`;
+    newHabitDiv.querySelector(".checkbox-container").appendChild(checkbox);
+  });
+
+  return newHabitDiv;
+}
 
 // Save Habits to localStorage
 function saveHabits() {
-    const habits = [];
-    const habitDivs = document.querySelectorAll('.habit');
+  habits.length = 0;
 
-    habitDivs.forEach(function(habitDiv) {
-        const habitName = habitDiv.querySelector('label').textContent;
-        const checkboxes = habitDiv.querySelectorAll('input[type="checkbox"]');
-        const checkboxStates = [];
+  const habitDivs = document.querySelectorAll(".habit");
+  habitDivs.forEach(function (habitDiv) {
+    const habitName = habitDiv.querySelector("label").textContent;
+    const checkboxes = habitDiv.querySelectorAll('input[type="checkbox"]');
+    const checkboxStates = [];
 
-        checkboxes.forEach(function(checkbox) {
-            checkboxStates.push(checkbox.checked);
-        });
-
-        habits.push({ name: habitName, checkboxStates: checkboxStates });
+    checkboxes.forEach(function (checkbox) {
+      checkboxStates.push(checkbox.checked);
     });
 
-    // Save to localStorage as JSON string
-    localStorage.setItem('habits', JSON.stringify(habits));
+    habits.push({ name: habitName, checkboxStates: checkboxStates });
+  });
+  localStorage.setItem("habits", JSON.stringify(habits));
 }
-
-// Load Habits from localStorage when page loads
 function loadHabits() {
-    const storedHabits = localStorage.getItem('habits');
-    if (storedHabits) {
-        const habits = JSON.parse(storedHabits);
+  if (storedHabits) {
+    const habits = JSON.parse(storedHabits);
 
-        habits.forEach(function(habit) {
-            const newHabitDiv = document.createElement('div');
-            newHabitDiv.classList.add('habit');
-            newHabitDiv.innerHTML = `<label>${habit.name}</label><div class="checkbox-container"></div>`;
+    habits.forEach(function (habit) {
+      const newHabitDiv = createHabitDiv(habit.name);
+      const checkboxes = newHabitDiv.querySelectorAll('input[type="checkbox"]');
+      checkboxes.forEach((checkbox, index) => {
+        checkbox.checked = habit.checkboxStates[index];
+      });
 
-            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-            days.forEach((day, index) => {
-                const checkbox = document.createElement('input');
-                checkbox.type = 'checkbox';
-                checkbox.id = `${habit.name.toLowerCase().replace(/\s+/g, '-')}-${day.toLowerCase()}`;
-                checkbox.checked = habit.checkboxStates[index];
-                newHabitDiv.querySelector('.checkbox-container').appendChild(checkbox);
-            });
-
-            document.getElementById('habit-container').appendChild(newHabitDiv);
-        });
-    }
+      habitContainer.appendChild(newHabitDiv);
+    });
+  }
 }
-
-// Load habits from localStorage when the page is refreshed
-window.addEventListener('load', loadHabits);
+window.addEventListener("load", loadHabits);
