@@ -29,12 +29,12 @@ body {
     height: auto;
 }
 .image-btn {
-    background: none; /* Remove background */
-    border: none; /* Remove border */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove any margin */
-    display: inline-block; /* Make button behave like an inline element */
-    cursor: pointer; /* Make it look clickable */
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block; 
+    cursor: pointer;
   }
   .image-btn:hover {
     opacity: 0.8;
