@@ -11,12 +11,12 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    background: conic-gradient(from var(--angle), transparent 70%, rgb(255, 157, 0),rgb(255, 0, 0), rgb(255, 255, 0));
+    background: conic-gradient(from var(--angle), transparent 75%, rgb(255, 157, 0),rgb(255, 0, 0), rgb(255, 255, 0));
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -2;
-    padding: 5px;
+    padding: 3px;
     border-radius: 10px;
     animation: 3s spin linear infinite;
 }
