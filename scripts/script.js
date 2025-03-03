@@ -1,4 +1,4 @@
-import {  habitContainer,  habitNameInput,  totalCompleted,  daysOfWeek, habits,storedHabits,} from "./data.js";
+import {  habitContainer,  habitNameInput,  totalCompleted,  daysOfWeek, habits, storedHabits } from "./data.js";
 
 // Add Habit
 function addHabit() {
