@@ -53,7 +53,7 @@ function createHabitDiv(habitName) {
   return newHabitDiv;
 }
 
-// Save Habits to localStorage
+// Save Habits to localStorage (Mark Habits as Complete)
 function saveHabits() {
   habits.length = 0;
 
