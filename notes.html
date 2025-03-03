@@ -1,0 +1,58 @@
+<!--
+
+// Add Habit
+This section creates a new habit entry when the user clicks the "add habit" button.
+
+The addHabit() function retrieves the habit name from the input field
+It validates that a name was entered (shows an alert if empty)
+Creates a new habit div using the createHabitDiv() helper function
+Adds the new habit to the page and clears the input field
+Calls saveHabits() to persist the data
+Sets up an event listener for the add habit button
+
+// Delete Habit
+This section handles removing habits from the tracker.
+
+Sets up an event listener for the "remove habit" button
+When clicked, it finds the last habit element in the container
+If no habits exist, it shows an alert
+Otherwise, it removes the last habit and calls saveHabits() to update storage
+
+// Mark Complete
+Though not explicitly labeled in your headers, this section:
+
+Sets up an event listener for the "mark complete" button
+Counts all checked checkboxes across all habits
+Updates the total completed counter display
+Calls saveHabits() to persist the updated state
+
+// Create Habit Element
+The createHabitDiv() function is a helper that:
+
+Creates a new div element with the "habit" class
+Sets its HTML to include a label with the habit name and a container for checkboxes
+For each day of the week (from the imported daysOfWeek array), creates a checkbox
+Generates unique IDs for each checkbox based on the habit name and day
+Adds the checkboxes to the container
+Returns the fully constructed habit div
+
+// Save Habits to localStorage
+The saveHabits() function handles data persistence:
+
+Clears the current habits array
+Gets all habit divs from the page
+For each habit, extracts the name and the checked state of each checkbox
+Stores this data in the habits array
+Saves the array to localStorage as JSON
+
+// Load Habits from localStorage
+The loadHabits() function restores saved habits:
+
+Checks if there are stored habits in localStorage
+If found, parses the JSON data
+For each saved habit, creates a new habit div
+Sets the checkbox states to match the saved states
+Adds the reconstructed habit to the page
+This function runs when the page loads via an event listener
+
+-->
