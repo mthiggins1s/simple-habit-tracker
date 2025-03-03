@@ -26,16 +26,6 @@ Counts all checked checkboxes across all habits
 Updates the total completed counter display
 Calls saveHabits() to persist the updated state
 
-// Create Habit Element
-The createHabitDiv() function is a helper that:
-
-Creates a new div element with the "habit" class
-Sets its HTML to include a label with the habit name and a container for checkboxes
-For each day of the week (from the imported daysOfWeek array), creates a checkbox
-Generates unique IDs for each checkbox based on the habit name and day
-Adds the checkboxes to the container
-Returns the fully constructed habit div
-
 // Save Habits to localStorage
 The saveHabits() function handles data persistence:
 
@@ -45,14 +35,6 @@ For each habit, extracts the name and the checked state of each checkbox
 Stores this data in the habits array
 Saves the array to localStorage as JSON
 
-// Load Habits from localStorage
-The loadHabits() function restores saved habits:
-
-Checks if there are stored habits in localStorage
-If found, parses the JSON data
-For each saved habit, creates a new habit div
-Sets the checkbox states to match the saved states
-Adds the reconstructed habit to the page
-This function runs when the page loads via an event listener
+Loads the data onto the page with .parse
 
 -->
